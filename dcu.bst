@@ -41,6 +41,7 @@ ENTRY
     URL
     volume
     year
+    urldate
   }
   { field.used etal.allowed etal.required }
   { extra.label sort.label list.year }
@@ -159,10 +160,20 @@ FUNCTION {quote}
   if$
 }
 
+% Hooray for access date after URLs!
+FUNCTION {format.urldate}
+{ urldate empty$
+    { "" }
+    { "(last accessed: " urldate ")" * * }
+  if$
+}
+
+% Modified from the original dcu write.url function to display URL
+% access date from the "urldate" field, if set.
 FUNCTION {write.url}
 { URL empty$
     { skip$ }
-    { "\newline\harvardurl{" URL * "}" * write$ newline$ }
+    { "\newline\harvardurl{" URL * "}" * " " format.urldate * * write$ newline$ }
   if$
 }
 
