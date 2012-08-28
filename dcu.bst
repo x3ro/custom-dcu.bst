@@ -493,7 +493,7 @@ FUNCTION {format.incoll.inproc.crossref}
     }
     {  " {\em in} \citeasnoun{" crossref * "}" * }
   if$
- 
+
 }
 
 INTEGERS { len }
@@ -541,7 +541,7 @@ FUNCTION {format.lab.names.abbr}
 	{ s #2 "{ff }{vv }{ll}{ jj}" format.name$ "others" =
             { s #1 "{vv~}{ll}" format.name$ " et~al." * }
 	    { s #1 "{vv~}{ll}" format.name$ " \harvardand\ " *
-              s #2 "{vv~}{ll}" format.name$ * 
+              s #2 "{vv~}{ll}" format.name$ *
             }
           if$
         }
@@ -1197,7 +1197,7 @@ FUNCTION {preliminaries} %%%XXX change
       'etal.required :=
     }
     {
-      editor.field field.used = 
+      editor.field field.used =
         {
           editor num.names$ #2 >
             { #1 }
@@ -1250,7 +1250,7 @@ FUNCTION {initialize.confusion}
 
 FUNCTION {confusion.pass}
 { last.sort.label sort.label =
-    { last.etal.allowed 
+    { last.etal.allowed
         { last.full.label make.full.label sortify.names =
             { skip$ }
             { #0 'etal.allowed :=
