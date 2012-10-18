@@ -42,6 +42,7 @@ ENTRY
     volume
     year
     urldate
+    isbn
   }
   { field.used etal.allowed etal.required }
   { extra.label sort.label list.year }
@@ -328,6 +329,13 @@ FUNCTION {format.edition}
 	{ edition "t" change.case$ " edn" * }
       if$
     }
+  if$
+}
+
+FUNCTION {format.isbn}
+{ isbn empty$
+  { "" }
+  { "ISBN: " isbn tie.or.space.connect }
   if$
 }
 
@@ -753,6 +761,7 @@ FUNCTION {book}
     }
   if$
   new.block
+  format.isbn output
   note output
   fin.entry
   write.url
