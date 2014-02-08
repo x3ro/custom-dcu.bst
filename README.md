@@ -5,3 +5,10 @@ This is a slightly modified version of the original `dcu.bst` style, which featu
 * URL access date is displayed right after the URL (from the "urldate" field), with the following format:
     * URL: <url> (last accessed: <urldate>)
 
+# Installation
+
+On Mac OS X, you can clone this repository into the
+
+    ~/Library/texmf/bibtex/bst/
+
+directory (which you might need to create). You should then by able to use the style like any built-in one.
